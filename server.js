@@ -12,7 +12,7 @@ app.get('/read-csv', (req, res) => {
   fs.createReadStream('tweets.csv')
     .pipe(csv())
     .on('data', (data) => {
-      if (rowCount < 2000) {
+      if (rowCount < 5000) {
         results.push(data);
         rowCount++;
       }
